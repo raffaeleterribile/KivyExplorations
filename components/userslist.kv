@@ -1,0 +1,31 @@
+#:kivy 2.3.1
+
+<UsersList>
+    RecycleView:
+        id: users
+        viewclass: 'UserItem'
+        data: [{'user_name': user['user_name'], 'first_name': user['first_name'], 'last_name': user['last_name'], 'email': user['email']} for user in root.users]
+        RecycleBoxLayout:
+            default_size: None, dp(56)
+            default_size_hint: 1, None
+            size_hint_y: None
+            height: self.minimum_height
+            orientation: 'vertical'
+
+<UserItem@BoxLayout>:
+    orientation: 'horizontal'
+    padding: 10
+    spacing: 10
+
+    User:
+        id: user
+        user_name: 'root.user_name'
+        first_name: 'root.first_name'
+        last_name: 'root.last_name'
+        email: 'root.email'
+
+    Button:
+        text: "Rimuovi"
+        size_hint_x: 0.4
+        on_press: app.root.remove_user(root)
+

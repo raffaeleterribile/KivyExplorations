@@ -1,0 +1,29 @@
+#:kivy 2.3.1
+
+<Users>:
+    orientation: 'vertical'
+    new_user: new_user
+    users: root.users
+
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint_y: 0.5
+
+        User:
+            id: new_user
+            user_name: new_user.user_name
+            first_name: new_user.first_name
+            last_name: new_user.last_name
+            email: new_user.email
+
+        Button:
+            text: "Aggiungi Utente"
+            size_hint_x: None
+            width: '120dp'
+            on_press: root.add_user(root.new_user)
+
+    UsersList:
+        id: users_list
+        users: root.users

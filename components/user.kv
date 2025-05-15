@@ -1,0 +1,76 @@
+#:kivy 2.3.1
+
+<User>:
+	padding: 20
+	spacing: 50
+	cols: 2
+	size_hint_x: 1.0
+	size_hint_y: 1.0
+
+	BoxLayout:
+		orientation: 'horizontal'
+		spacing: 20
+		
+		Label:
+			text: "Identificativo utente"
+			font_size: 18
+			size_hint_y: None
+			height: 40
+
+		TextInput:
+			text: root.user_name
+			font_size: 18
+			size_hint_y: None
+			height: 40
+			on_text: root.user_name = self.text
+
+	BoxLayout:
+		orientation: 'horizontal'
+		spacing: 20
+		
+		Label:
+			text: "Email utente"
+			font_size: 18
+			size_hint_y: None
+			height: 40
+
+		TextInput:
+			text: root.email
+			font_size: 18
+			size_hint_y: None
+			height: 40
+			on_text: root.email = self.text
+
+	BoxLayout:
+		orientation: 'horizontal'
+		spacing: 20
+
+		Label:
+			text: "Nome utente"
+			font_size: 18
+			size_hint_y: None
+			height: 40
+
+		TextInput:
+			text: root.first_name
+			font_size: 18
+			size_hint_y: None
+			height: 40
+			on_text: root.first_name = self.text
+
+	BoxLayout:
+		orientation: 'horizontal'
+		spacing: 20
+
+		Label:
+			text: "Cognome utente"
+			font_size: 18
+			size_hint_y: None
+			height: 40
+
+		TextInput:
+			text: root.last_name
+			font_size: 18
+			size_hint_y: None
+			height: 40
+			on_text: root.last_name = self.text
